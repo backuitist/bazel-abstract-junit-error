@@ -1,0 +1,23 @@
+options:
+  buildHeader: [ "load(\"@io_bazel_rules_scala//scala:scala_import.bzl\", \"scala_import\")" ]
+  languages: [ "java", "scala:2.12.6" ]
+  resolverType: "coursier"
+  resolvers:
+    - id: "mavencentral"
+      type: "default"
+      url: https://repo.maven.apache.org/maven2/
+  strictVisibility: true
+  transitivity: runtime_deps
+  versionConflictPolicy: highest
+
+dependencies:
+  org.backuity:
+    matchete:
+      lang: scala
+      version: "1.28.0"
+      modules: [core, junit, json, macros]
+
+  junit:
+    junit:
+      lang: java
+      version: '4.12'
